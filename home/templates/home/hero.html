@@ -21,7 +21,7 @@
                     <img src="{{ destaque.imagem.large.url }}" alt="{{ destaque.titulo }}"
                          class="img-fluid img-thumbnail">
                     <div class="mbr-section-btn align-left mt-2 mt-lg-4">
-                        <a class="btn btn-primary display-4" href="">Leia mais</a>
+                        <a class="btn btn-primary display-4" href="{% url 'post_detail' destaque.slug %}">Leia mais</a>
                     </div>
                 </div>
             </div>

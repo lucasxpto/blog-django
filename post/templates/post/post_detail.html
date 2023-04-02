@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ object.titulo }}
+{% endblock %}
+
+{% block content %}
+
+    <section data-bs-version="5.1" class="header2 cid-tzVgfOnXBf mbr-parallax-background" id="header2-0">
+
+        <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(255, 255, 255);"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-12">
+                    <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1">
+                        <strong>
+                            {{ object.titulo }}
+                        </strong>
+                    </h1>
+
+                    <p>
+                        <img src="{{ object.imagem.large.url }}" alt="{{ object.titulo }}"
+                             class="img-fluid img-thumbnail">
+                    </p>
+
+                    <p class="mbr-text mbr-fonts-style display-12">
+                        {{ object.corpo }}
+                    </p>
+
+                </div>
+                <div class="col-12 col-lg-12">
+                    <div class="mbr-section-btn align-center mt-2 mt-lg-4">
+                        <a class="btn btn-primary display-4" href="{% url 'home' %}">Voltar para Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock %}

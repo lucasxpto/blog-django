@@ -1,0 +1,81 @@
+{% for post in posts %}
+    <section data-bs-version="5.1" class="content10 cid-tzVgp39K95" id="content10-1">
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md">
+
+                    <img class="img-fluid"
+                         src="{{ post.imagem.large.url }}" alt="{{ post.titulo }}" title="{{ post.titulo }}">
+
+                </div>
+                <div class="col-md-12 col-lg-6 sm:mt-4">
+
+                    <h6 class="mbr-section-subtitle mbr-fonts-style mb-4 display-5">
+                        {{ post.titulo }}
+                    </h6>
+
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        {{ post.corpo|truncatewords:40 }}
+                    </p>
+
+                    <div class="mbr-section-btn align-left">
+                        <a class="btn btn-primary display-4" href="{% url 'post_detail' post.slug %}">Leia mais</a>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+{% endfor %}
+
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center py-4">
+
+
+        {% if posts.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page=1">&laquo; primeira</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ posts.previous_page_number }}">anterior</a>
+            </li>
+        {% endif %}
+
+
+
+        {% if posts.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ posts.next_page_number }}">próxima</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ posts.paginator.num_pages }}">última &raquo;</a>
+            </li>
+        {% endif %}
+
+
+    </ul>
+</nav>
+
+
+{#<div class="pagination justify-content-center">#}
+{#    <span class="step-links">#}
+{#        {% if posts.has_previous %}#}
+{#            <a class="page-link" href="?page=1">&laquo; primeira</a>#}
+{#            <a class="page-link" href="?page={{ posts.previous_page_number }}">anterior</a>#}
+{#        {% endif %}#}
+{##}
+{#        <span class="current">#}
+{#            Página {{ posts.number }} de {{ posts.paginator.num_pages }}.#}
+{#        </span>#}
+{##}
+{#        {% if posts.has_next %}#}
+{#            <a class="page-link" href="?page={{ posts.next_page_number }}">próxima</a>#}
+{#            <a class="page-link" href="?page={{ posts.paginator.num_pages }}">última &raquo;</a>#}
+{#        {% endif %}#}
+{#    </span>#}
+{#</div>#}
