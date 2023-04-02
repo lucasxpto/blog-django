@@ -15,11 +15,11 @@
                         {{ post.titulo }}
                     </h6>
 
-                    <p class="mbr-text mbr-fonts-style display-7">
+                    <div class="mbr-text mbr-fonts-style display-7 hero">
                         {% autoescape off %}
                             {{ post.corpo|truncatewords:40 }}
                         {% endautoescape %}
-                    </p>
+                    </div>
 
                     <div class="mbr-section-btn align-left">
                         <a class="btn btn-primary display-4" href="{% url 'post_detail' post.slug %}">Leia mais</a>
