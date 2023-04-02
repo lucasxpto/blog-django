@@ -18,6 +18,15 @@
                             {{ object.titulo }}
                         </strong>
                     </h1>
+                    <div class="fontes">
+                        <p>
+                            Por <i class="fa fa-user"></i> {{ object.autor }}
+                        </p>
+                        <p>
+                            <i class="fa fa-calendar"></i>Publicado em {{ object.criado|date:"d/m/Y H:i" }}
+                        </p>
+
+                    </div>
 
                     <p>
                         <img src="{{ object.imagem.large.url }}" alt="{{ object.titulo }}"
