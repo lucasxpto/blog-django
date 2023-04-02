@@ -11,4 +11,4 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('titulo',)}
     raw_id_fields = ('autor',)
     date_hierarchy = 'publicado'
-    ordering = ('status', 'publicado')
+    ordering = ('-destaque', 'status', 'publicado')
